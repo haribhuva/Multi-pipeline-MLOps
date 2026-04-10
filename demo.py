@@ -1,12 +1,21 @@
+from backend.configration.create_database import CreateDatabase
+from backend.configration.upload_csv import UploadCSV
 from backend.logger import logging
 from backend.exception import MyException
-import sys
 
-def main():
-    logging.info("Starting the multi-pipeline-mlops demo.")
+
+if __name__ == "__main__":
     try:
-        # Simulate some work that could raise an exception
-        raise ValueError("This is a demo error for testing MyException.")
-    except Exception as e:
-        logging.error("An error occurred in main.")
-        raise MyException(str(e), sys) from e
+        logging.info("Starting database creation and CSV upload process")
+        
+        # Create database if it doesn't exist
+        db_creator = CreateDatabase()
+        db_creator.connect_database()
+        
+        # Upload CSV files to the database
+        csv_uploader = UploadCSV()
+        csv_uploader.upload_csv_to_db()
+        
+        logging.info("Database creation and CSV upload process completed successfully")
+    except MyException as e:
+        logging.error(f"An error occurred: {e}")
