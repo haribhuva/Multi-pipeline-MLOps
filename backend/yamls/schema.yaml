@@ -1,0 +1,23 @@
+columns:
+  order_id: object
+  order_status: object
+  order_delivered_carrier_date: object
+  order_delivered_customer_date: object
+  order_estimated_delivery_date: object
+  review_id: object
+  review_score: int
+  review_comment_title: object
+  review_comment_message: object
+
+numerical_columns:
+  review_score
+
+object_columns:
+  order_id
+  order_status
+  order_delivered_carrier_date
+  order_delivered_customer_date
+  order_estimated_delivery_date
+  review_id
+  review_comment_title
+  review_comment_message

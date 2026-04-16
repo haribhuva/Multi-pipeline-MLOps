@@ -25,3 +25,7 @@ DATA_SPLIT_RATIO: float = 0.2
 TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 FILE_NAME: str = "data.csv"
+
+DATA_VALIDATION_DIR_NAME: str = "data_validation"
+DATA_VALIDATION_REPORT_FILE_NAME: str = "schema_report.yaml"
+SCHEMA_FILE_PATH: str = os.path.join("backend", "yamls", "schema.yaml")
